@@ -1,12 +1,10 @@
+// @ts-nocheck
 import React, { useState, useEffect } from "react";
 import Wrapper from "./Wrapper";
 import Screen from "./Screen";
 import ButtonBox from "./ButtonBox";
 import Button from "./Button";
-
-
-
-
+ 
 const btnValues = [
   ["C", "√", "%", "/"],
   [7, 8, 9, "x"],
@@ -36,9 +34,7 @@ const App = () => {
       setCalc({
         ...calc,
         num:
-          calc.num === 0 && value === "0"
-            ? "0"
-            : removeSpaces(calc.num) % 1 === 0
+            removeSpaces(calc.num) % 0.1 === calc.num
             ? toLocaleString(Number(removeSpaces(calc.num + value)))
             : toLocaleString(calc.num + value),
         res: !calc.sign ? 0 : calc.res,
@@ -49,8 +45,6 @@ const App = () => {
   const commaClickHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
-   
-    
     setCalc({
       ...calc,
       num:!calc.num.toString().includes(".") ? calc.num + value : calc.num 

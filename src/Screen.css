@@ -4,7 +4,7 @@
     margin-bottom: 10px;
     padding:  10px;
     background-color: #0a76e9;;
-    border-radius: 10px;
+    
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -12,4 +12,5 @@
     font-weight: bold;
     box-sizing: border-box;
     line-height: 2px;
+    border-bottom: 1px solid wheat;
 }
